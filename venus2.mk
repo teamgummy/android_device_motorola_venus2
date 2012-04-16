@@ -1,11 +1,11 @@
 # This is the product configuration for a full venus2
-DEVICE_PREBUILT := device/moto/venus2/prebuilt
+DEVICE_PREBUILT := device/motorola/venus2/prebuilt
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Device overlay
-DEVICE_PACKAGE_OVERLAYS += device/moto/venus2/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/venus2/overlay
 
 # high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal mdpi
@@ -18,8 +18,8 @@ PRODUCT_PACKAGES := \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/moto/venus2/audio/libaudio.so:/system/lib/libaudio.so \
-    device/moto/venus2/audio/liba2dp.so:/system/lib/liba2dp.so
+    device/motorola/venus2/audio/libaudio.so:/system/lib/libaudio.so \
+    device/motorola/venus2/audio/liba2dp.so:/system/lib/liba2dp.so
 
 PRODUCT_PACKAGES += \
     audio.primary.omap3 \
@@ -139,14 +139,14 @@ PRODUCT_LOCALES += en_US
 
 # these need to be here for the installer, just put them here for now
 PRODUCT_COPY_FILES += \
-    device/moto/venus2/releaseutils/mke2fs:system/bin/mke2fs \
-    device/moto/venus2/releaseutils/tune2fs:system/bin/tune2fs \
-    device/moto/venus2/releaseutils/check_kernel:system/etc/releaseutils/check_kernel \
-    device/moto/venus2/releaseutils/finalize_release:system/etc/finalize_release
+    device/motorola/venus2/releaseutils/mke2fs:system/bin/mke2fs \
+    device/motorola/venus2/releaseutils/tune2fs:system/bin/tune2fs \
+    device/motorola/venus2/releaseutils/check_kernel:system/etc/releaseutils/check_kernel \
+    device/motorola/venus2/releaseutils/finalize_release:system/etc/finalize_release
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
 PRODUCT_COPY_FILES += $(shell \
-    find device/moto/venus2/modules -name '*.ko' \
+    find device/motorola/venus2/modules -name '*.ko' \
     | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
     | tr '\n' ' ')
 
@@ -202,7 +202,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=ppp0 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/moto/venus2/kernel
+LOCAL_KERNEL := device/motorola/venus2/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -211,8 +211,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 $(call inherit-product, hardware/ti/omap3/Android.mk)
-$(call inherit-product, vendor/moto/venus2/venus2-vendor.mk)
-$(call inherit-product, device/moto/venus2/prebuilt/bootmenu/Bootmenu.mk)
+$(call inherit-product, vendor/motorola/venus2/venus2-vendor.mk)
+$(call inherit-product, device/motorola/venus2/prebuilt/bootmenu/Bootmenu.mk)
 $(call inherit-product-if-exists, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 

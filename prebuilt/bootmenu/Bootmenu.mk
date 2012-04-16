@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PREBUILT := device/moto/venus2/prebuilt
+DEVICE_PREBUILT := device/motorola/venus2/prebuilt
 
 # Prebuilt files to be placed under /system/bootmenu/***
 PRODUCT_COPY_FILES := \
