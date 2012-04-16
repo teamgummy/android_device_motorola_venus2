@@ -7,18 +7,18 @@ LIBAUDIO_INTERMEDIATES_PREREQS := $(PRODUCT_OUT)/obj/lib
 
 # prerequisites for building audio
 file := $(LIBAUDIO_INTERMEDIATES_PREREQS)/libaudio.so
-$(file) : device/moto/venus2/audio/libaudio.so
+$(file) : device/motorola/venus2/audio/libaudio.so
 	@echo "Copy libaudio.so -> $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) cp -a device/moto/venus2/audio/libaudio.so $@
+	$(hide) cp -a device/motorola/venus2/audio/libaudio.so $@
 
 file := $(LIBAUDIO_INTERMEDIATES_PREREQS)/liba2dp.so
-$(file) : device/moto/venus2/audio/liba2dp.so
+$(file) : device/motorola/venus2/audio/liba2dp.so
 	@echo "Copy liba2dp.so -> $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) cp -a device/moto/venus2/audio/liba2dp.so $@
+	$(hide) cp -a device/motorola/venus2/audio/liba2dp.so $@
 
 include $(all-subdir-makefiles)
 
