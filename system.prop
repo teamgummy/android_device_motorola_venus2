@@ -168,3 +168,7 @@ ro.telephony.ignore.linkiperror=true
 ro.product.use_charge_counter=1
 persist.sys.usb.config=mass_storage,adb
 #ro.config.disable_hw_accel=true
+
+# Camera fix
+ro.media.capture.classification=classI
+ro.media.capture.flip=horizontalandvertical
